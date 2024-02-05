@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Bebidas from './components/Bebidas';
+import Formulario from './components/Formulario';
+import ModalBebida from './components/ModalBebida';
+import { BebidasProvider } from './context/BebidasProvider';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <BebidasProvider>
+      <header className='py-5 text-center bg-red-500 text-white'>
+        <h1 className=' text-6xl font-bold'>Buscador de Bebidas</h1>
       </header>
-    </div>
+      
+      <Formulario />
+      <Bebidas />
+      <ModalBebida/>
+    
+    
+    </BebidasProvider>
   );
 }
 
